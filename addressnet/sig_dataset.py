@@ -109,17 +109,17 @@ def dataset(filenames: [str], batch_size: int = 10, shuffle_buffer: int = 1000, 
     """
 
     def input_fn() -> tf.data.Dataset:
-        ds = tf.data.TextLineDataset('encoded_US_100000.txt')
+        ds = tf.data.TextLineDataset(filenames)
         ds = ds.map(lambda record: tf.py_function(synthesise_address, [record], [tf.int64, tf.int64, tf.bool]),
                     num_parallel_calls=num_parallel_calls)
 
-        # ds = ds.padded_batch(batch_size, ([], [None], [None, n_labels]))
+        ds = ds.padded_batch(batch_size, ([], [None], [None, n_labels]))
 
         ds = ds.map(
             lambda _lengths, _encoded_text, _labels: ({'lengths': _lengths, 'encoded_text': _encoded_text}, _labels),
             num_parallel_calls=num_parallel_calls
         )
-        # ds = ds.prefetch(buffer_size=prefetch_buffer_size)
+        ds = ds.prefetch(buffer_size=prefetch_buffer_size)
         return ds
 
     return input_fn
