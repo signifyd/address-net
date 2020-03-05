@@ -38,27 +38,9 @@ _features = OrderedDict([
 
 # List of fields used as labels in the training data
 labels_list = [
-    'building_name',  # 1
-    'level_number_prefix',  # 2
-    'level_number',  # 3
-    'level_number_suffix',  # 4
-    'level_type',  # 5
-    'flat_number_prefix',  # 6
-    'flat_number',  # 7
-    'flat_number_suffix',  # 8
-    'flat_type',  # 9
-    'number_first_prefix',  # 10
-    'number_first',  # 11
-    'number_first_suffix',  # 12
-    'number_last_prefix',  # 13
-    'number_last',  # 14
-    'number_last_suffix',  # 15
-    'street_name',  # 16
-    'street_suffix_code',  # 17
-    'street_type_code',  # 18
-    'locality_name',  # 19
-    'state_abbreviation',  # 20
-    'postcode'  # 21
+    'street_number', #1
+    'street_name', #2
+    'unit' #3
 ]
 # Number of labels in total (+1 for the blank category)
 n_labels = len(labels_list) + 1
