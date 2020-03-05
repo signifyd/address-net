@@ -16,6 +16,8 @@ git clone https://github.com/signifyd/address-net.git
 
 ## Train
 
+(NOTE: this will run for 5-10 minutes.)
+
 ```
 python train.py
 ```
