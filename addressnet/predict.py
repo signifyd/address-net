@@ -3,7 +3,8 @@ from typing import Dict, List, Union
 import textdistance
 import tensorflow as tf
 
-from addressnet.dataset import predict_input_fn, labels_list
+from addressnet.dataset import predict_input_fn
+from addressnet.sig_dataset import labels_list
 from addressnet.lookups import street_types, street_type_abbreviation, states, street_suffix_types, flat_types, \
     level_types
 from addressnet.model import model_fn
