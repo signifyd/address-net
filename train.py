@@ -10,7 +10,7 @@ nnetwork = tf.estimator.Estimator(
 )
 
 nnetwork.train(
-    input_fn=dataset(filenames='/Users/nancyru/Code/signifyd_addressnet/data/encoded_US_100000.txt'), hooks=None, steps=100, max_steps=None, saving_listeners=None
+    input_fn=dataset(filenames='./data/encoded_US_50000.txt'), hooks=None, steps=5000, max_steps=None, saving_listeners=None
 )
 
 #train_spec = tf.estimator.TrainSpec(input_fn=lambda: model.input_fn(args.training_file_pattern, True),
