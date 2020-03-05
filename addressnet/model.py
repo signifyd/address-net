@@ -2,7 +2,7 @@ from typing import Dict, Optional
 
 import tensorflow as tf
 
-from addressnet.dataset import vocab, n_labels
+from addressnet.sig_dataset import vocab, n_labels
 
 
 def model_fn(features: Dict[str, tf.Tensor], labels: tf.Tensor, mode: str, params) -> tf.estimator.EstimatorSpec:

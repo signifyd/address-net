@@ -8,32 +8,9 @@ import string
 
 # Schema used to decode data from the TFRecord file
 _features = OrderedDict([
-    ('building_name', tf.io.FixedLenFeature([], tf.string)),
-    ('lot_number_prefix', tf.io.FixedLenFeature([], tf.string)),
-    ('lot_number', tf.io.FixedLenFeature([], tf.string)),
-    ('lot_number_suffix', tf.io.FixedLenFeature([], tf.string)),
-    ('flat_number_prefix', tf.io.FixedLenFeature([], tf.string)),
-    ('flat_number_suffix', tf.io.FixedLenFeature([], tf.string)),
-    ('level_number_prefix', tf.io.FixedLenFeature([], tf.string)),
-    ('level_number_suffix', tf.io.FixedLenFeature([], tf.string)),
-    ('number_first_prefix', tf.io.FixedLenFeature([], tf.string)),
-    ('number_first_suffix', tf.io.FixedLenFeature([], tf.string)),
-    ('number_last_prefix', tf.io.FixedLenFeature([], tf.string)),
-    ('number_last_suffix', tf.io.FixedLenFeature([], tf.string)),
+    ('street_number', tf.io.FixedLenFeature([], tf.string)),
     ('street_name', tf.io.FixedLenFeature([], tf.string)),
-    ('locality_name', tf.io.FixedLenFeature([], tf.string)),
-    ('postcode', tf.io.FixedLenFeature([], tf.string)),
-    ('flat_number', tf.io.FixedLenFeature([], tf.int64)),
-    ('level_number', tf.io.FixedLenFeature([], tf.int64)),
-    ('number_first', tf.io.FixedLenFeature([], tf.int64)),
-    ('number_last', tf.io.FixedLenFeature([], tf.int64)),
-    ('flat_type', tf.io.FixedLenFeature([], tf.int64)),
-    ('level_type', tf.io.FixedLenFeature([], tf.int64)),
-    ('street_type_code', tf.io.FixedLenFeature([], tf.int64)),
-    ('street_suffix_code', tf.io.FixedLenFeature([], tf.int64)),
-    ('state_abbreviation', tf.io.FixedLenFeature([], tf.int64)),
-    ('latitude', tf.io.FixedLenFeature([], tf.float32)),
-    ('longitude', tf.io.FixedLenFeature([], tf.float32))
+    ('unit', tf.io.FixedLenFeature([], tf.string)),
 ])
 
 # List of fields used as labels in the training data
@@ -42,6 +19,7 @@ labels_list = [
     'street_name', #2
     'unit' #3
 ]
+
 # Number of labels in total (+1 for the blank category)
 n_labels = len(labels_list) + 1
 
